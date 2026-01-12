@@ -1,3 +1,4 @@
+```errors
 (base) aygera@aygera-HP-Z6-G4-Workstation:~/Downloads/RN_ONT$ cp -r 15022024/ ~/biostar/RN/
 cp: error reading '15022024/150224_RK_fasta/barcode64/FAS90246_pass_barcode64_061fc2eb_41692f9c_35_reads.fasta': Input/output error
 cp: error reading '15022024/150224_RK_fasta/barcode24/FAS90246_pass_barcode24_061fc2eb_41692f9c_16_reads.fasta': Input/output error
@@ -8,3 +9,4 @@ cp: error reading '15022024/150224_RK_fasta/barcode38/FAS90246_pass_barcode38_06
 cp: error reading '15022024/150224_RK_fasta/barcode38/FAS90246_pass_barcode38_061fc2eb_41692f9c_3_reads.fasta': Input/output error
 cp: error reading '15022024/150224_RK_fasta/barcode38/FAS90246_pass_barcode38_061fc2eb_41692f9c_12_reads.fasta': Input/output error
 cp: error reading '15022024/150224_RK_metaFlye-20240301T075028Z-001/barcode70/20-repeat/read_alignment_dump': Input/output error
+```
