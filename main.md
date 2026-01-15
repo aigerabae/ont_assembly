@@ -39,3 +39,51 @@ To enable fully reference-free analyses, we developed the nanoClust algorithm, w
 - NanoCLUST: a species-level analysis of 16S rRNA nanopore sequencing data = https://academic.oup.com/bioinformatics/article/37/11/1600/5929694?login=true = construction of a polished read and subsequent and Blast classification for  amplicon-based full-length 16S rRNA nanopore reads
 ??? I'm condused, are they the same thing or different??? with the previous
 - 
+
+
+GPT response:
+📘 General long-amplicon ONT metabarcoding & consensus approaches
+
+Nanopore sequencing of long ribosomal DNA amplicons for biodiversity analysis
+H. Krehenwinkel et al., 2019 — long read rDNA barcodes, consensus, phylogenetic resolution across taxa.
+📄 Link: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6503943/
+
+NanoAmpli-Seq: a workflow for full-length marker consensus from mixed communities
+Calus et al., 2018 (GigaScience) — builds consensus sequences from long ONT amplicons using clustering and polishing.
+📄 Link: https://academic.oup.com/gigascience/article/7/12/giy140/5202451
+
+High-accuracy long-read amplicon sequencing using UMIs (Karst et al.)
+Karst et al., 2021 (Nature Methods) — uses unique molecular identifiers + ONT to generate highly accurate consensus amplicon sequences (e.g., rRNA operon ~4.5 kb).
+📄 Link: https://pubmed.ncbi.nlm.nih.gov/33432244/
+
+CONCOMPRA: consensus-based community profiling with long amplicons
+Stock et al., 2025 (Briefings in Bioinformatics) — builds consensus sequences and profiles communities from long ONT amplicons without reference dependence.
+📄 Link: https://academic.oup.com/bib/article/26/1/bbae642/7924278
+
+PRONAME: pipeline for processing long-read Nanopore metabarcoding data
+Dubois et al., 2024 (Frontiers in Bioinformatics) — produces high-quality consensus sequences with error correction from ONT amplicons.
+📄 Link: https://www.frontiersin.org/journals/bioinformatics/articles/10.3389/fbinf.2024.1483255/full
+
+🧬 Organism-specific long-amplicon marker studies (relevant workflows)
+
+18S full-length ribosomal DNA metabarcoding by ONT
+Gaonkar et al., 2024 (Ecology and Evolution) — tests primers for full-length 18S rDNA and constructs consensus sequences for community analysis.
+📄 Link: https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.11232
+
+Long-read metabarcoding of eukaryotic rRNA operons (18S + ITS + 28S)
+Latz et al., 2022 — evaluates primers and sequences long rRNA regions with Nanopore, including workflows to handle long reads and consensus/OTUs.
+📄 Link: https://epic.awi.de/56907/1/Latz_et_al_2022_Short_and_long_read_metabarcodingf.pdf
+
+Protistan amplicon sequencing on ONT for full 18S resolution
+Breaking the Standard (Protistan ONT study), 2025 — compares full-length amplicon consensus from ONT against short-read methods, with pipelines for consensus filtering and clustering.
+📄 Link: https://www.researchgate.net/publication/390273925_Breaking_the_Standard_Can_Oxford_Nanopore_Technologies_Sequencing_Compete_With_Illumina_in_Protistan_Amplicon_Studies
+
+🧪 ONT amplicon analysis pipelines including polishing/clustering
+
+Complete pipeline for ONT amplicon sequencing (ONT-AmpSeq)
+Schacksen et al., 2024 (FEBS Open Bio) — from raw ONT reads to quality filtering, clustering, polishing, taxonomic classification and OTU table generation.
+📄 Link: https://onlinelibrary.wiley.com/doi/10.1002/2211-5463.13868
+
+A recent long amplicon consensus workflow (LACA)
+Hui et al., 2025 — long amplicon consensus analysis including multiple de novo clustering methods to form consensus markers.
+📄 Link: https://www.tandfonline.com/doi/full/10.1080/19490976.2025.2516703
