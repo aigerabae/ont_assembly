@@ -15,3 +15,5 @@ for line in $(cat folders.txt); do
     cat $line/* > /data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/cap3_assembly/${line}.txt
 done
 ```
+
+I removed unnecesary files and moved the rest o folder files/ in that directory
