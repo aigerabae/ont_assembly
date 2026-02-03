@@ -12,8 +12,21 @@ cd /data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/150224_RK/2024021
 ls > folders.txt
 for line in $(cat folders.txt); do
     echo "Processing folder: $line"
-    cat $line/* > /data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/cap3_assembly/${line}.txt
+    zcat $line/* > /data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/cap3_assembly/files/${line}.txt
 done
 ```
 
-I removed unnecesary files and moved the rest o folder files/ in that directory
+I removed unnecesary files (folder.txt unclassified.txt)
+/data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/cap3_assembly/files/
+ls > ../files.txt
+cd ../
+for line in $(cat files.txt); do
+    echo "Processing file: $line"
+    cap3.linux.x86_64/CAP3/cap3 /data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/cap3_assembly/files/${line}
+done
+mv files/*.txt.* ../result/
+
+Nothing was assembled. May want to:
+a) trim sequences
+b) merge lines together
+c) change settings (is there a setting for single end reads?)
