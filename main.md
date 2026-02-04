@@ -1,3 +1,8 @@
+This will add color to the command line prompt but only in the current session:
+```bash
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+```
+
 #### Chapter 0: metadata
 First thing first, I made all metadata fit a certain format and got primers used for sequencing. The primers were for 18s-28s region and it was done with amplicon sequencing so possibly not all tools will do well. I also got the numbers of the samples on gel electrphoresis to verify correctness of the assembly. Also, some of the samples ae eDNA and other metagenomic samples, so certain tools that expect a single WGS organism sample won't fit either
 
@@ -17,7 +22,8 @@ done
 ```
 
 I removed unnecesary files (folder.txt unclassified.txt)
-/data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/cap3_assembly/files/
+```bash
+cd /data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/cap3_assembly/files/
 ls > ../files.txt
 cd ../
 for line in $(cat files.txt); do
@@ -25,8 +31,11 @@ for line in $(cat files.txt); do
     cap3.linux.x86_64/CAP3/cap3 /data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/cap3_assembly/files/${line}
 done
 mv files/*.txt.* ../result/
+```
 
 Nothing was assembled. May want to:
 a) trim sequences
 b) merge lines together
 c) change settings (is there a setting for single end reads?)
+
+Nevermind. It just needs fasta, not fastq. I will try to find a pipeline from fastq to fasta with qual file of scores 
