@@ -85,10 +85,3 @@ Then count reads per barcode to compare with the original HAC run:
 find $OUT/demux -name "*.fastq" | head
 for f in $OUT/demux/*.fastq; do echo -e "$(basename $f)\t$(( $(wc -l < $f) / 4 ))"; done | sort -k2,2nr
 ```
-
-Trimming:
-```
-python3 $T/trim_filter.py --demux $D --map $T/barcode_sample_map.csv --out $OUT/trimmed_all    --threads 16
-python3 $T/trim_filter.py --demux $D --map $T/barcode_sample_map.csv --out $OUT/trimmed_primer --threads 16 --require-primer
-rm -r $OUT/trimmed      # the test folder
-```
