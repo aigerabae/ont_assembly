@@ -74,10 +74,25 @@ python3 $T/amplicon_sorter/amplicon_sorter.py -v
 
 Run:
 ```
+tmux new -s consensus
+```
+
+```
+T=/data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/tools
+OUT=/data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/dorado_basecaling
+NF=$OUT/near_full
+C=$OUT/consensus
+cd $OUT                                   # stand somewhere safe
+export MAMBA_ROOT_PREFIX=$T/mamba
+eval "$($T/bin/micromamba shell hook -s bash)"
 micromamba activate consensus
 export AMPLICON_SORTER=$T/amplicon_sorter/amplicon_sorter.py
-export NGSPECIESID=$(ls $T/NGSpeciesID-*/NGSpeciesID)
-OUT=/data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/dorado_basecaling
-ls $OUT/near_full/plants_5765/*.fastq.gz | head -3     # should list plants_01... files
-bash $T/run_consensus.sh $OUT/near_full/plants_5765 $OUT/consensus/plants_5765 1000 1250 16
+export NGSPECIESID=$T/NGSpeciesID-v0.5.0-linux-x86_64/NGSpeciesID
+
+rm -rf $C/plants_5765                     # clear the failed attempt
+
+JOBS=12 bash $T/run_consensus.sh $NF/plants_5765 $C/plants_5765 1000 1250 10 2>&1 | tee $C/run_plants_5765.log
+JOBS=12 bash $T/run_consensus.sh $NF/plants_5756 $C/plants_5756 1100 1350 10 2>&1 | tee $C/run_plants_5756.log
+JOBS=14 bash $T/run_consensus.sh $NF/eDNA        $C/eDNA        1000 1800 10 2>&1 | tee $C/run_eDNA.log
+JOBS=16 bash $T/run_consensus.sh $NF/feces       $C/feces        900 1800 9  2>&1 | tee $C/run_feces.log
 ```
