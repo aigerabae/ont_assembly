@@ -96,3 +96,9 @@ JOBS=12 bash $T/run_consensus.sh $NF/plants_5756 $C/plants_5756 1100 1350 10 2>&
 JOBS=14 bash $T/run_consensus.sh $NF/eDNA        $C/eDNA        1000 1800 10 2>&1 | tee $C/run_eDNA.log
 JOBS=16 bash $T/run_consensus.sh $NF/feces       $C/feces        900 1800 9  2>&1 | tee $C/run_feces.log
 ```
+
+
+OUT=/data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/dorado_basecaling
+D=/data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/dorado_basecaling/demux/no_sample/20240215_0644_0_FAS90246_061fc2eb/fastq_pass
+T=/data/adaniyarov/ds1821p_IV_nanopore_data/icebox_gridION_70/tools
+python3 $T/primer_scan.py $D/barcode67 | column -t
